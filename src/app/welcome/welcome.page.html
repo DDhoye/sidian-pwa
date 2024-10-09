@@ -1,0 +1,86 @@
+<ion-content [fullscreen]="true" [scrollEvents]="true">
+  <div id="container">
+    <div class="logo-img">
+      <img
+        src="assets/imgs/sidian-logo-1.png"
+        alt="Logo"
+        height="83"
+        width="167"
+      />
+    </div>
+
+    <div
+      *ngIf="scrollTop < 200 && !isScrolling && showScrollIcon"
+      class="testee"
+      (click)="scrollToBottom()"
+    >
+      <ion-icon
+        class="centered-element bounce-animation"
+        color="primary"
+        name="chevron-down-circle-outline"
+      ></ion-icon>
+    </div>
+
+    <!--Welcome Section-->
+    <div class="welcome-section">
+      <span class="welcome-title">
+        Welcome to <br />
+        Sidians's Digital <br />
+        Account Opening
+      </span>
+      <p class="welcome-desc">
+        Open your new account online quickly, <br />
+        easy, anytime and anywhere with <br />
+        just a few steps.
+      </p>
+    </div>
+
+    <div class="steps-section">
+      <div class="content">
+        <img src="assets/imgs/description.png" alt="steps" height="400" />
+      </div>
+    </div>
+
+    <div class="start-btn" #scrollTarget>
+      <ion-button expand="block" mode="md" [routerLink]="['/home']"
+        >Continue to create account</ion-button
+      >
+    </div>
+
+    <div class="help-section">
+      <!-- <span style="padding-top: 2px; font-size: 14px">Need Help?</span>
+      <p style="font-size: 16px !important; font-weight: 600 !important">
+        Call Us at (+254) 716 243 917
+      </p>
+      <div class="social">
+        <img
+          src="assets/icon/twitter.png"
+          height="17"
+          width="19"
+          alt="X-Logo"
+        />
+        <img
+          src="assets/icon/facebook.png"
+          height="17"
+          width="19"
+          alt="facebook-Logo"
+        />
+        <img
+          src="assets/icon/instagram.png"
+          height="17"
+          width="19"
+          alt="instagram-Logo"
+        />
+      </div>
+      <p
+        style="
+          font-weight: 600 !important;
+          text-decoration: underline;
+          font-size: 16px;
+        "
+      >
+        talktous&#64;sidian.co.ke
+      </p> -->
+    </div>
+  </div>
+</ion-content>

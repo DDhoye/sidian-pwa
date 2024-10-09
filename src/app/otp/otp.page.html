@@ -1,0 +1,64 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div><ion-icon name="arrow-back" routerLink="/contact"></ion-icon></div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">OTP Verification</h2>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <div class="para">
+      <p>
+        Please input the OTP sent to your mobile number and email. Ensure you
+        enter the code promptly for secure account setup.
+      </p>
+    </div>
+  </ion-item>
+
+  <div class="otpForm">
+    <form [formGroup]="otpForm">
+      <div>
+        <ion-item lines="none">
+          <ion-label position="floating">Email OTP</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+      </div>
+    </form>
+  </div>
+
+  <div class="otp-para">
+    <ion-item lines="none">
+      <p>OTP will resend in <span class="highlight-text">59 seconds</span></p>
+    </ion-item>
+  </div>
+
+  <div class="otplink">
+    <ion-item lines="none">
+      <a>Resend</a>
+    </ion-item>
+  </div>
+
+  <ion-item lines="none">
+    <div class="p-btn">
+      <ion-button expand="block" mode="md" [routerLink]="['/identification']"
+        >Proceed<span
+          ><ion-icon
+            name="chevron-forward"
+            class="custom-icon"
+          ></ion-icon></span
+      ></ion-button>
+    </div>
+  </ion-item>
+</ion-content>

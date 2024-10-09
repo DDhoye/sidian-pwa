@@ -1,0 +1,7 @@
+{
+  "name": "sidian-bank-onboarding",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

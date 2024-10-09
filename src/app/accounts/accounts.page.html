@@ -1,0 +1,124 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div><ion-icon name="arrow-back" routerLink="/home"></ion-icon></div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<!--Page content-->
+
+<ion-content
+  [fullscreen]="true"
+  [scrollEvents]="true"
+  (ionScroll)="handleScroll($event)"
+>
+  <div
+    *ngIf="scrollTop < 200 && !isScrolling && showScrollIcon"
+    class="testee"
+    (click)="scrollToBottom()"
+  >
+    <ion-icon
+      class="centered-element bounce-animation"
+      color="primary"
+      name="chevron-down-circle-outline"
+    ></ion-icon>
+  </div>
+
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">Current Account</h2>
+    </ion-label>
+  </ion-item>
+
+  <ng-container *ngFor="let current of currentaccdata; let i = index">
+    <ion-card class="accData">
+      <ion-card-content>
+        <div>
+          <h3 class="text-[#000000]">{{current.title}}</h3>
+        </div>
+        <div>
+          <ion-img [src]="current.image"></ion-img>
+        </div>
+        <div [innerHTML]="current.description" class="para">
+          <p>{{current.description}}</p>
+        </div>
+        <div [innerHTML]="current.targetmarket" class="para">
+          <p>{{current.targetmarket}}</p>
+        </div>
+        <div class="openacclink">
+          <a (click)="selectAccount('Current')">Open Account</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!--End Of Page-->
+
+  <!--Page content 2-->
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">Savings Account</h2>
+    </ion-label>
+  </ion-item>
+
+  <ng-container *ngFor="let saving of savingsaccdata; let i = index">
+    <ion-card class="accData">
+      <ion-card-content>
+        <div>
+          <h3 class="text-[#000000]">{{saving.title}}</h3>
+        </div>
+        <div>
+          <ion-img [src]="saving.image"></ion-img>
+        </div>
+        <div [innerHTML]="saving.description" class="para">
+          <p>{{saving.description}}</p>
+        </div>
+        <div [innerHTML]="saving.targetmarket" class="para">
+          <p>{{saving.targetmarket}}</p>
+        </div>
+        <div class="openacclink">
+          <a (click)="selectAccount('Savings')">Open Account</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!--End Of Page-->
+
+  <!--Page content 3-->
+  <div #scrollTarget>
+    <ion-item lines="none">
+      <ion-label>
+        <h2 class="text-[#636C74]">Business Account</h2>
+      </ion-label>
+    </ion-item>
+
+    <ng-container *ngFor="let bus of businessaccdata; let i = index">
+      <ion-card class="accData">
+        <ion-card-content>
+          <div>
+            <h3 class="text-[#000000]">{{bus.title}}</h3>
+          </div>
+          <div>
+            <ion-img [src]="bus.image"></ion-img>
+          </div>
+          <div [innerHTML]="bus.description" class="para">
+            <p>{{bus.description}}</p>
+          </div>
+          <div [innerHTML]="bus.targetmarket" class="para">
+            <p>{{bus.targetmarket}}</p>
+          </div>
+          <div class="openacclink">
+            <a (click)="selectAccount('Business')">Open Account</a>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </div>
+
+  <!--End Of Page-->
+</ion-content>

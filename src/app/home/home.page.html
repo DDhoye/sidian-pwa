@@ -1,0 +1,131 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <ion-icon name="arrow-back" routerLink="/welcome"></ion-icon>
+  </div>
+</ion-header>
+
+<!--Page Content Section-->
+
+<ion-content [fullscreen]="true">
+  <div class="logo-img">
+    <img
+      src="assets/imgs/Sidian-logo2.png"
+      alt="Logo"
+      height="53"
+      width="133"
+    />
+  </div>
+
+  <div class="paragraph1">
+    <p>
+      Are you ready to embark on a seamless banking journey? Experience the ease
+      of opening an account right from the comfort of your home or office.
+    </p>
+    <br />
+    <p>
+      Welcome to Sidian Bank, where banking meets innovation. Whether you're a
+      newcomer or a loyal member of our community, embark on a secure financial
+      voyage with Sidian Bank. Your trust is our commitment. Please select your
+      journey to initiate a new account with us.
+    </p>
+  </div>
+
+  <div class="section-1">
+    <ion-card class="req-card">
+      <ion-card-header>
+        <h1>Requirements</h1>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="req-items">
+          <div class="flex m-4">
+            <img src="assets/imgs/smartphone.png" class="mr-3" />
+            <span>A Smartphone for QR Scan</span>
+          </div>
+          <div class="flex m-4">
+            <img src="assets/imgs/id.png" class="mr-3" />
+            <span>Kenyan National ID/Passport</span>
+          </div>
+          <div class="flex m-4">
+            <img src="assets/imgs/signature.png" class="mr-3" />
+            <span>Signature on a piece of paper</span>
+          </div>
+        </div>
+
+        <div class="flex m-4 mt-10 text-xs font-bold">
+          <img src="assets/imgs/time.png" class="mr-3" />
+          <span>Approximate time: 10 - 15 minutes</span>
+        </div>
+      </ion-card-content>
+
+      <div class="start-btn">
+        <ion-button expand="block" mode="md" [routerLink]="['/accounts']"
+          >Open New Account<span
+            ><ion-icon
+              name="chevron-forward"
+              class="custom-icon"
+            ></ion-icon></span
+        ></ion-button>
+      </div>
+    </ion-card>
+  </div>
+
+  <!--Additional-info-cards-->
+  <ng-container *ngFor="let info of infoData; let i = index">
+    <ion-card class="info-card">
+      <ion-card-content>
+        <div class="info-title">
+          <ion-label>{{ info.title }}</ion-label>
+        </div>
+
+        <div class="info-desc">
+          <p>{{ info.description }}</p>
+        </div>
+
+        <div class="info-link">
+          <a>{{ info.link }}</a>
+          <ion-icon
+            name="chevron-forward"
+            class="custom-icon"
+            routerLink="/welcome"
+          ></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
+
+<!--Footer Section-->
+<ion-footer class="ion-no-border">
+  <div class="help-section" #scrollTarget>
+    <span style="padding-top: 2px; font-size: 14px">Need Help?</span>
+    <p style="font-size: 18px !important; font-weight: bold !important">
+      Call Us at (+254) 716 243 917
+    </p>
+    <div class="social">
+      <img src="assets/icon/twitter.png" height="17" width="19" alt="X-Logo" />
+      <img
+        src="assets/icon/facebook.png"
+        height="17"
+        width="19"
+        alt="facebook-Logo"
+      />
+      <img
+        src="assets/icon/instagram.png"
+        height="17"
+        width="19"
+        alt="instagram-Logo"
+      />
+    </div>
+    <p
+      style="
+        font-weight: 600 !important;
+        text-decoration: underline;
+        font-size: 16px;
+      "
+    >
+      talktous&#64;sidian.co.ke
+    </p>
+    <hr />
+  </div>
+</ion-footer>

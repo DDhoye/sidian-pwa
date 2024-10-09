@@ -1,0 +1,152 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div>
+      <ion-icon name="arrow-back" routerLink="/identification"></ion-icon>
+    </div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">Complete Your Profile</h2>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <div class="para">
+      <p>
+        To ensure a personalized experience and tailor our services to your
+        needs, please provide us with a few more details. Your information is
+        securely stored and will only be used to enhance your account
+        functionalities and service delivery. Let's get started!
+      </p>
+    </div>
+  </ion-item>
+
+  <!--PAGE CONTENT-->
+  <!-- Account Preferences Card -->
+  <div class="card-container">
+    <ion-card class="form-card">
+      <ion-card-header (click)="toggleDropdown('accountPreferences')">
+        <ion-card-title>
+          Account Preferences
+          <ion-icon name="chevron-down" class="dropdown-icon"></ion-icon>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="showAccountPreferences">
+        <form [formGroup]="accountPreferencesForm">
+          <!-- Select Preferred Branch -->
+          <ion-item lines="none">
+            <ion-label position="floating">Preferred Branch</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-select
+              formControlName="preferredBranch"
+              placeholder="Select Branch"
+            >
+              <ion-select-option
+                *ngFor="let branch of branches"
+                [value]="branch"
+              >
+                {{ branch }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!-- Select Country of Residence -->
+          <ion-item lines="none">
+            <ion-label position="floating">Country of Residence</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-select
+              formControlName="countryOfResidence"
+              placeholder="Select Country"
+            >
+              <ion-select-option
+                *ngFor="let country of countries"
+                [value]="country"
+              >
+                {{ country }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="floating">Town</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input
+              class="pl-4"
+              formControlName="town"
+              placeholder="e.g. Nairobi"
+            ></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="floating">Residential Area</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input
+              formControlName="residentialArea"
+              placeholder="e.g. Langata"
+            ></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="floating">RM Code</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input formControlName="rmCode" placeholder="###"></ion-input>
+          </ion-item>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Occupational Details Card -->
+    <ion-card class="form-card">
+      <ion-card-header (click)="toggleDropdown('occupationalDetails')">
+        <ion-card-title>
+          Occupational Details
+          <ion-icon name="chevron-down" class="dropdown-icon"></ion-icon>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="showOccupationalDetails">
+        <form [formGroup]="occupationalDetailsForm">
+          <ion-item lines="none">
+            <ion-label position="floating">Employer</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input formControlName="employer"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="floating">Occupation</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input formControlName="occupation"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="floating">Years of Experience</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input formControlName="experience"></ion-input>
+          </ion-item>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-item lines="none">
+    <div class="p-btn">
+      <ion-button expand="block" mode="md" [routerLink]="['/confirmation']"
+        >Proceed<span
+          ><ion-icon
+            name="chevron-forward"
+            class="custom-icon"
+          ></ion-icon></span
+      ></ion-button>
+    </div>
+  </ion-item>
+</ion-content>

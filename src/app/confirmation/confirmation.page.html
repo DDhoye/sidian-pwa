@@ -1,0 +1,140 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div>
+      <ion-icon name="arrow-back" routerLink="/accdetails"></ion-icon>
+    </div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">
+        Flexxy Account <br />
+        Application
+      </h2>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <div class="para">
+      <p>Confirm your details before submitting.</p>
+    </div>
+  </ion-item>
+
+  <ion-card class="info-card">
+    <ion-card-content>
+      <div class="info-title flex justify-between items-center">
+        <ion-label>Contact Details</ion-label>
+        <img src="assets/imgs/edit.png" class="mr-3" />
+      </div>
+
+      <div class="info-desc grid grid-cols-3 gap-x-2">
+        <p class="col-span-1">Email Address:</p>
+        <p class="col-span-2">
+          <span class="font-bold">davedhoye1&#64;gmail.com</span>
+        </p>
+
+        <p class="col-span-1">Phone Number:</p>
+        <p class="col-span-2">
+          <span class="font-bold">+254 716 243 917</span>
+        </p>
+
+        <p class="col-span-1">Address:</p>
+        <p class="col-span-2">
+          <span class="font-bold">Nairobi, Kenya</span>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="info-card">
+    <ion-card-content>
+      <div class="info-title flex justify-between items-center">
+        <ion-label>Professional Details</ion-label>
+        <img src="assets/imgs/edit.png" class="mr-3" />
+      </div>
+
+      <div class="info-desc grid grid-cols-3 gap-x-2">
+        <p class="col-span-1">Employer:</p>
+        <p class="col-span-2">
+          <span class="font-bold">Giktek</span>
+        </p>
+
+        <p class="col-span-1">Occupation:</p>
+        <p class="col-span-2">
+          <span class="font-bold">Software Developer</span>
+        </p>
+
+        <p class="col-span-1">Experience:</p>
+        <p class="col-span-2">
+          <span class="font-bold">1 Year</span>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="info-card">
+    <ion-card-content>
+      <div class="info-title flex justify-between items-center">
+        <ion-label>Account Preferences</ion-label>
+        <img src="assets/imgs/edit.png" class="mr-3" />
+      </div>
+
+      <div class="info-desc grid grid-cols-3 gap-x-2">
+        <p class="col-span-1">Branch:</p>
+        <p class="col-span-2">
+          <span class="font-bold">Kilimani</span>
+        </p>
+
+        <p class="col-span-1">RM Code:</p>
+        <p class="col-span-2">
+          <span class="font-bold">345 678</span>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="id-photo">
+    <ion-card class="info-cards">
+      <ion-card-content>
+        <p>ID Front</p>
+        <img src="assets/imgs/idd.png" class="mr-3" />
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-cards">
+      <ion-card-content>
+        <p>ID Back</p>
+        <img src="assets/imgs/idd.png" class="mr-3" />
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="info-cards">
+      <ion-card-content>
+        <p>Liveness Selfie</p>
+        <img src="assets/imgs/idd.png" class="mr-3" />
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="info-cards">
+      <ion-card-content>
+        <p>Signature</p>
+        <img src="assets/imgs/idd.png" class="mr-3" />
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-item lines="none">
+    <div class="p-btn">
+      <ion-button expand="block" mode="md" [routerLink]="['/review']"
+        >Save & Finish<span
+          ><ion-icon
+            name="chevron-forward"
+            class="custom-icon"
+          ></ion-icon></span
+      ></ion-button>
+    </div>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div><ion-icon name="arrow-back" routerLink="/otp"></ion-icon></div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-item lines="none">
+      <ion-label>
+        <h2 class="text-[#636C74]">
+          ID, Selfie & Signature <br />
+          Capture
+        </h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div class="para">
+        <p>
+          Capture your identification details. This will be used as validation
+          for your account.
+        </p>
+      </div>
+    </ion-item>
+
+    <div class="section-1">
+      <ion-card class="req-card">
+        <ion-card-content>
+          <div class="req-items">
+            <div class="flex m-4 center-content" (click)="addPhotoToGallery()">
+              <h2 class="req-title">National ID</h2>
+              <span
+                ><ion-icon name="chevron-forward" class="custom-icon"></ion-icon
+              ></span>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="req-card">
+        <ion-card-content>
+          <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+            <ion-fab-button (click)="addPhotoToGallery()">
+              <ion-icon name="camera"></ion-icon>
+            </ion-fab-button>
+          </ion-fab> -->
+          <div class="req-items">
+            <div class="flex m-4 center-content" (click)="addPhotoToGallery()">
+              <h2 class="req-title">Selfie</h2>
+              <span
+                ><ion-icon name="chevron-forward" class="custom-icon"></ion-icon
+              ></span>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="req-card">
+        <ion-card-content>
+          <div class="req-items">
+            <div class="flex m-4 center-content" (click)="addPhotoToGallery()">
+              <h2 class="req-title">Signature</h2>
+              <span
+                ><ion-icon name="chevron-forward" class="custom-icon"></ion-icon
+              ></span>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <ion-item lines="none">
+    <div class="p-btn">
+      <ion-button expand="block" mode="md" [routerLink]="['/accdetails']"
+        >Proceed<span
+          ><ion-icon
+            name="chevron-forward"
+            class="custom-icon"
+          ></ion-icon></span
+      ></ion-button>
+    </div>
+  </ion-item>
+</ion-content>

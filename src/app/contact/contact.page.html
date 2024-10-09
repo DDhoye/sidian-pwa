@@ -1,0 +1,91 @@
+<ion-header color="light">
+  <div class="header-icon">
+    <div><ion-icon name="arrow-back" routerLink="/accounts"></ion-icon></div>
+    <div><h2>Open New Account</h2></div>
+  </div>
+
+  <div class="divider">
+    <hr class="h-[10px] bg-[#F7EC3C] border-0" />
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <ion-label>
+      <h2 class="text-[#636C74]">
+        Confirm Your<br />
+        Contact Details for<br />
+        Secure Verification
+      </h2>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <div class="para">
+      <p>
+        Enter your mobile number and email for OTP verification. Ensure you have
+        access to both for a smooth setup process.
+      </p>
+    </div>
+  </ion-item>
+
+  <div class="form-item">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div>
+        <ion-item lines="none">
+          <ion-label position="floating">Phone Number</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input
+            formControlName="phoneNumber"
+            type="tel"
+            placeholder="Enter your phone number"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item lines="none">
+          <ion-label position="floating">Email</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input
+            formControlName="email"
+            type="email"
+            placeholder="Enter your email"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item lines="none">
+          <ion-label position="floating">Confirm Email</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input
+            formControlName="confirmEmail"
+            type="email"
+            placeholder="Confirm your email"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-item lines="none">
+        <div id="recaptcha-container"></div>
+        <div class="p-btn">
+          <ion-button
+            expand="block"
+            mode="md"
+            type="submit"
+            [routerLink]="['/otp']"
+            >Proceed<span
+              ><ion-icon
+                name="chevron-forward"
+                class="custom-icon"
+              ></ion-icon></span
+          ></ion-button>
+        </div>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>
